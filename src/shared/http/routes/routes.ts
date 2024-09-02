@@ -1,3 +1,4 @@
+import midiaRouter from "@modules/midias/routers/midia.route";
 import { Router } from "express";
 
 const router = Router()
@@ -14,5 +15,7 @@ router.get('/', (req, res) => {
         }
     })
 })
+
+router.use('/midia', midiaRouter)
 
 export default router

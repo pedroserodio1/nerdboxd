@@ -13,17 +13,15 @@ import router from './routes/routes'
 import { AppError } from '@shared/AppError/AppError' */
 
 //instanciando o modulo do express
-const app = express()
+import app from '@shared/app/app'
 
 //configuração do dotenv para utilização de variaveis de ambiente
 dotenv.config()
 
 //instanciando modulos necessarios no express
-app.use(express.json())
-app.use(cors())
 
 //colocando rotas no express
-app.use('/api/v1', router)
+
 
 //instanciando modulo de erro do celebrate no express
 app.use(errors())
@@ -50,7 +48,9 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 //iniciando servidor
 app.listen(process.env.NUMBER_PORT, () => {
     console.log('------------------------------')
-    console.log(`Inciando servidor local em localhost:${process.env.NUMBER_PORT}`)
+    console.log(`Inciando servidor local em localhost:${process.env.NUMBER_PORT}/api/v1/`)
     console.log('------------------------------')
 
 })
+
+export default app

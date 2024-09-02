@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Midia" ALTER COLUMN "started_date" SET DATA TYPE DATE,
+ALTER COLUMN "finish_date" SET DATA TYPE DATE;
